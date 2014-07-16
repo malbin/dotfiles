@@ -104,21 +104,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# DDG autocomplete stuff
-for file in /usr/local/ddg/www-release/tools/*.bash; do
-	. "$file"
-done
-unset file
-
-export PATH=$PATH:/usr/local/ddg/www-release
 export PATH=$HOME/local/bin:$PATH
-export PATH=$PATH:/usr/lib/node_modules/casperjs/node_modules/phantomjs/lib/phantom/bin
-#export DDG_ERROR_EMAIL=yegg@duckduckgo.com
-
-# locallib
-if [ "$USER" != "root" ] ; then
-    eval $(perl -Mlocal::lib=/usr/local/ddg.cpan/perl5)
-fi
 
 # PS1
 NONE="\[\033[00m\]"
@@ -132,21 +118,10 @@ if [ "$USER" = "root" ] ; then
 	cd $HOME;
 fi
 
-# DDG Variables
-. /usr/local/ddg/sysadmin/aws/variables.sh
-
-if [ -f ~/first-login.bash ]; then
-    . ~/first-login.bash
-fi
-
-if [ ! -f ~/.welcome-lock ]; then
-	. ~/welcome.bash
-fi
-
 # Show aliases
 if [ -f ~/.bash_aliases ]; then
 	echo ""
 	cat ~/.bash_aliases
 fi
 
-d && git branch --merged master | grep -v 'master$' | xargs git branch -d && git fetch --prune && cd ~
+export EDITOR=$(which vim)
