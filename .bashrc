@@ -77,6 +77,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+export LS_COLORS="di=32:*.sh=33:*.pl=33:*.bak=35:*.zip=35:*.tgz=35:*.rpm=35:*.gz=35:*.Z=35:*.z=35"
+# multimedia file types love to be colourised
+export LS_COLORS="$LS_COLORS:*.mp3=36:*.m3u=36:*.wav=36:*.gif=36:*.jpg=36:*.xcf=36:*.png=36:*.avi=36:*.mpg=36:*.mpeg=36:*.wmv=36:*.mov=36:*.mp4=36:*.mkv=36"
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -111,7 +114,7 @@ NONE="\[\033[00m\]"
 GREEN="\[\033[01;32m\]"
 L_CYAN="\[\033[01;36m\]"
 BLUE="\[\033[01;34m\]"
-PS1="$GREEN[$L_CYAN\@ $GREEN\u@\h \W $BLUE\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')$GREEN]\$ $NONE"
+PS1="$NONE[\u@\h $GREEN\W $L_CYAN\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')$NONE]\$ $NONE"
 if [ "$USER" = "root" ] ; then
 	export HOME=/root;
 	export PS1="$GREEN[$L_CYAN\@ $GREEN\u@\h \W $BLUE\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')$GREEN]# $NONE"

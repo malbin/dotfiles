@@ -1,6 +1,7 @@
 alias n='cd /var/log/nginx'
 alias gc='git commit -a'
 alias gs='git log -p --stat --color'
+alias gd='git diff --color'
 alias a='more ~/.bash_aliases'
 alias cp='/bin/cp -v'
 alias mv='/bin/mv -v'
