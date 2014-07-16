@@ -17,7 +17,7 @@ done
 
 echo "Installing all dotfiles..."
 sleep 2
-dotfiles=( ".bashrc" ".bash_functions" ".bash_aliases" ".tmux.conf" ".vimrc" ".vim" )
+dotfiles=( ".bashrc" ".bash_functions" ".bash_aliases" ".tmux.conf" ".vimrc" ".vim" ".irssi" )
 for dotfile in "${dotfiles[@]}"
 do
     cp -Rv $dotfile $home/$dotfile
