@@ -7,6 +7,7 @@ set showcmd
 set ruler
 set backspace=indent,eol,start
 set nowrap
+set paste
 
 filetype indent on
 filetype plugin on
@@ -49,6 +50,9 @@ let g:showfuncctagsbin = "/usr/local/bin/ctags"
 
 let g:ConqueTerm_Color = 1
 
+# useful for when you edit a file and forget it's not writeable
+# source: https://news.ycombinator.com/item?id=9397679
+cmap w!! w !sudo tee % >/dev/null
 
 let mapleader = ","
 
