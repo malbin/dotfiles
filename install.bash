@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo "Auto-detecting username and home path..."
-user=$(whoami)
-home=$(grep $user /etc/passwd | awk -F: '{ print $6 }')
+user=$USER
+home=$HOME
 sleep 2
 
 while true; do
