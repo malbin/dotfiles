@@ -1,4 +1,3 @@
-alias n='cd /var/log/nginx'
 alias gc='git commit -a'
 alias gs='git log -p --stat --color'
 alias gd='git diff --color'
@@ -8,3 +7,9 @@ alias mv='/bin/mv -v'
 alias rm='/bin/rm -v'
 alias ln='/bin/ln -v'
 alias tmux='TERM=xterm-256color tmux'
+
+# zfs
+alias zfs='sudo zfs'
+alias zpool='sudo zpool'
+alias zpl='sudo zpool list'
+alias zps='sudo zpool status'
