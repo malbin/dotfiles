@@ -1,16 +1,21 @@
-set shiftwidth=4
 set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
+
 set modeline
+
 set autoindent
+
 set showcmd
 set ruler
 set backspace=indent,eol,start
 set nowrap
-set paste
 
-filetype indent on
-filetype plugin on
+set pastetoggle=<F2>
+set listchars=tab:>~ list
+
+
 map \p i(<Esc>ea)<Esc>
 map \[ i[<Esc>ea]<Esc>
 map \" i"<Esc>ea"<Esc>
@@ -26,20 +31,7 @@ let g:html_tag_case = 'lowercase'
 let g:no_html_tab_mapping = 1
 let g:no_html_toolbar = 'yes'
 
-
-if has ("gui_running")
-	set background=dark
-	" 
-	" set transparency=2
-    set guifont=Monaco:h10
-    set guioptions-=T
-    colorscheme russell
-    set t_Co=256
-else
-	set background=dark
-    set t_Co=256
-    colorscheme russell
-endif
+colorscheme twilight256
 
 augroup md
     autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:&gt;
